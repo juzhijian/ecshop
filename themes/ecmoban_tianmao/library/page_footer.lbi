@@ -17,7 +17,7 @@
     </div>
     
     <div class="helpTitBg_right">
-       <p>手机天猫</p>
+       <p>手机商店</p>
        <div class="shouji_t"><img src="../images/shouji_t.jpg" width="105" height="105"></div>
     </div>
 </div>
@@ -98,7 +98,6 @@ $('#returnTop').click(function(){
   <!-- 结束ICP 证书{/if} -->
 {$copyright}
  {$shop_address} {$shop_postcode}<br /> 
-{foreach from=$lang.p_y item=pv}{$pv}{/foreach}{$licensed}<br />
     {if $stats_code}
     <div align="center">{$stats_code}</div>
     {/if}
@@ -106,8 +105,7 @@ $('#returnTop').click(function(){
 	
 
 
-<div style="margin:3px auto; height:20px; text-align:center">技术支持: <a href="http://www.ecmoban.com/" style="color:#fff">上海商创网络科技有限公司</a> </div>
-<div align="center"><a href="http://www.ecmoban.com/" target="_blank"><img src="images/ecmoban.gif" alt="ECShop模板" /></a></div>
+<div style="margin:3px auto; height:20px; text-align:center">技术支持: <a href="http://www.jzhijian.com" style="color:#fff">灵宝聚指尖网络科技有限公司</a> </div>
 
 </div>
 </div>
