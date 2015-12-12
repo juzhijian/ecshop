@@ -1,0 +1,221 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
+ {insert_scripts files='transport_jquery.js,utils.js'}
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script type="text/javascript">
+//设为首页 www.ecmoban.com
+function SetHome(obj,url){
+    try{
+        obj.style.behavior='url(#default#homepage)';
+       obj.setHomePage(url);
+   }catch(e){
+       if(window.netscape){
+          try{
+              netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+         }catch(e){
+              alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+          }
+       }else{
+        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【"+url+"】设置为首页。");
+       }
+  }
+}
+ 
+//收藏本站 bbs.ecmoban.com
+function AddFavorite(title, url) {
+  try {
+      window.external.addFavorite(url, title);
+  }
+catch (e) {
+     try {
+       window.sidebar.addPanel(title, url, "");
+    }
+     catch (e) {
+         alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+     }
+  }
+}
+</script>
+<script type="text/javascript">
+	//初始化主菜单
+	  function sw_nav(obj,tag)
+	  {
+
+		  var DisSub = document.getElementById("DisSub_"+obj);
+		  var HandleLI= document.getElementById("HandleLI_"+obj);
+		  if(tag==1)
+		  {
+			  DisSub.style.display = "block";
+		  }
+		  else
+		  {
+			  DisSub.style.display = "none";
+		  }
+
+	  }
+</script>
+    
+<!--顶部导航-->
+<div class="ng-toolbar">
+	<div class="ng-toolbar-con block">
+    	<div class="ng-toolbar-left">
+        	<a class="a-fav-ehaier" href="javascript:alert('当前浏览器不支持此操作，请使用 Ctrl+D 收藏{$shop_name}！')">收藏{$shop_name}</a>
+            <span class="s-weixin-box js-show-weixin" onMouseOver="sw_nav('ewm',1);sw_nav('ewm_close',1)" onMouseOut="sw_nav('ewm',0);sw_nav('ewm_close',0)">
+            	<a class="a-weixin-ehaier" href="javascript:void(0);">微信</a>
+                <img class="img-weixin-qr" width="165" height="202" src="images/qrehaier.png" src3="images/qrehaier.png" alt="微信二维码" id="DisSub_ewm">
+                <em class="em-close"  id="DisSub_ewm_close">关闭</em>
+            </span>
+            <span class="s-app-box js-show-app"  onMouseOver="sw_nav('app',1);sw_nav('app_close',1)" onMouseOut="sw_nav('app',0);sw_nav('app_close',0)">
+            	<a class="a-app-ehaier" href="javascript:void(0);">商城app</a>
+                <img class="img-app-qr" width="194" height="202" src="images/ehaierapp.png" src3="images/ehaierapp.png" alt="微信二维码" id="DisSub_app">
+                <em class="em-close" id="DisSub_app_close">关闭</em>
+            </span>
+        </div>
+        <div class="ng-toolbar-right"> 
+            <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: block;"> 
+            	{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} 
+            </div>
+            <a href="user.php?act=order_list" style="float:left;">我的订单</a><i class="ng-line"></i>
+            <!--{if $navigator_list.top}-->
+            <div id="topNav" class="ng-bar-nav-box"> 
+                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} --> 
+                <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a> 
+                <!-- {if !$smarty.foreach.nav_top_list.last} --><i class="ng-line"></i><!-- {/if} --> 
+                <!-- {/foreach} -->
+                <i class="ng-line"></i><a href="../index.php">{$shop_name}官网</a>
+                <div class="topNavR"></div>
+            </div>
+            <!-- {/if} --> 
+        </div>
+    </div>
+</div>
+
+
+<div class="ng-header">
+    <div class="ng-header-con block">
+        <div class="ng-header-box">
+        	<div class="head-promise"><a class="a-promise freeship" href="#" rel="nofollow">全场免运费</a><a class="a-promise deliverinstall" href="#" rel="nofollow">送装同步</a><a class="a-promise satisfy" href="#" rel="nofollow">满意再付款</a></div>
+            <a href="index.php" class="logo">
+                <img src="../images/logo.gif">
+            </a> 
+            <a href="javascript:void(0)" class="slogn">
+            </a>    
+            <div class="ng-search"> 
+                <div class="g-search">
+                    <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()"  >
+                    <div class="search-keyword-box">
+                    <input name="keywords" type="text" id="keyword" value="【十惠国庆，一促到底】" class="search-keyword" onfocus="javascript:if(this.value=='【十惠国庆，一促到底】'){this.value=''}" onblur="javascript:if(this.value==''){this.value='【十惠国庆，一促到底】'}" />
+                    </div>
+                    <input name="imageField" type="submit" value="搜索"  class="btn-search"style="cursor:pointer;" />
+                    <div class="clear"></div>
+                    <div id="snKeywordNew" class="g-search-hotwords"> 
+                    <script type="text/javascript">
+                    {literal}
+                    function checkSearchForm()
+                    {
+                    if(document.getElementById('keyword').value)
+                    {
+                    return true;
+                    }
+                    else
+                    {
+                    alert("{$lang.no_keywords}");
+                    return false;
+                    }
+                    }
+                    {/literal}
+                    </script> 
+                    {if $searchkeywords}
+                    <b>热门搜索：</b>
+                    {foreach from=$searchkeywords item=val name=val} 
+                        {if $smarty.foreach.val.iteration <5} 
+                        <a class="keyword"  href="search.php?keywords={$val|escape:url}">{$val}</a> 
+                        {/if}
+                    {/foreach}
+                    {/if} 
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ng-nav-bar">
+    <div class="block">
+        <!--分类树导航-->
+        <div class="ng-sort"  onMouseOver="sw_nav('sort_list',1)" onMouseOut="sw_nav('sort_list',0)">  
+            <a class="ng-all-hook" href="catalog.php">商品分类</a>
+            <div class="ng-sort-list-box " id="DisSub_sort_list" >
+            	<dl><!--{foreach from=$categories item=cat name=foo}-->
+                      {if $smarty.foreach.foo.iteration < 24}
+                       <dt>
+                       <a class="a" href="{$cat.url}">{$cat.name|escape:html}</a>
+                      </dt>
+                      <dd>
+                        <!--{foreach from=$cat.cat_id item=child name=foo2}-->
+                            <a href="{$child.url}">{$child.name|escape:html}</a>
+                            <!-- {if !$smarty.foreach.foo2.last} -->
+                             | 
+                            <!-- {/if} -->
+                            <!--{foreach from=$child.cat_id item=childer}--> 
+                            <a  style="font-weight:normal;" href="{$childer.url}">{$childer.name|escape:html}</a>
+                            <!--{/foreach}-->
+                            
+                        <!--{/foreach}-->
+                      </dd>
+                      <!-- {if $smarty.foreach.foo.iteration mod 4 eq 0} -->
+                      </dl>
+                      <dl>
+                      <!-- {/if} -->
+                      {/if} 
+                      <!--{/foreach}--></dl>    
+                  <div class="category-contact">
+                  	 <a class="online-service">在线客服</a>
+                  </div>
+            </div>
+        </div>
+        <!--/分类树导航-->
+        
+        <!--中部导航-->
+        <div class="ng-nav-index">
+            <ul class="ng-nav">
+                <li><a href="../index.php">{$lang.home}</a></li>
+                <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav name=foo} -->
+                <li class="{$nav.ctype}">
+                    <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a>
+                </li>
+                <!-- {/foreach} -->
+            </ul>
+        </div>
+        
+        <!--购物车-->
+        <div id="ECS_CARTINFO">
+        	{insert name='cart_info'}
+        </div>
+        
+    </div>
+
+</div>
+
+
+
+<div style="clear:both"></div>
+<script>
+	//商品分类在用户中心页隐藏
+	$(function(){
+		var sort_list=$("#DisSub_sort_list");
+		if(sort_list.find("dl").is(":empty")){
+			sort_list.remove();
+		}
+	});
+	
+</script>
+ 
+ 
+
+ 
+
+

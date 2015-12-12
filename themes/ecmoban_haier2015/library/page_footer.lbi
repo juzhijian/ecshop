@@ -1,0 +1,201 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="all-service bgc-f2">
+	<div class="container clearfix">
+    	<div class="services-rule">
+        	<p class="h3-title">售后服务和保修政策</p>
+            <p class="p-rule">
+            <!--{foreach from=$categories item=cat name=foo}-->
+            <!-- {if $smarty.foreach.foo.iteration < 10} -->
+                <a class="a-rule" href="{$cat.url}">{$cat.name|escape:html}</a>
+                <!-- {if $smarty.foreach.foo.iteration neq 9} -->|<!-- {/if} -->
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+            </p>
+        </div>
+        <p class="service-online"><a class="a-servicer J_openkf">在线客服</a></p>
+        <p class="service-online"><a class="s-wechat J-wechat" onMouseOver="sw_nav('wechat',1)" onMouseOut="sw_nav('wechat',0)">微信客服</a><img class="img-wechat" src="images/wechat.png" id="DisSub_wechat"></p>
+    </div>
+</div>
+
+<div class="all-help bgc-f2">
+	<div class="container clearfix" style="overflow:hidden;">
+    	<!--{if $helps}-->
+        <!-- {foreach from=$helps item=help_cat name=foo} --> 
+        <!-- {if $smarty.foreach.foo.iteration < 6}--> 
+            <dl class="dl-all-help">
+            <dt><span>{$help_cat.cat_name}</span></dt>
+            <!-- {foreach from=$help_cat.article item=item name=item} -->
+            <!-- {if $smarty.foreach.item.iteration < 7}--> 
+            <dd><a href="{$item.url}" target="_blank" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
+            <!-- {/if} --> 
+            <!-- {/foreach} -->
+            </dl>
+        <!-- {/if} --> 
+        <!-- {/foreach} --> 
+        <!--{/if}-->
+    </div>
+</div>
+
+<div class="all-promise bgc-f2">
+	<ul class="container clearfix ul-all-promise">
+    	<li class="li-all-promise li-all-promise-1">
+        	<img class="img-promise" src="images/promise-1.png" width="82" height="76" alt="24小时限时达">
+            <a href="javascript:void(0);" class="a-title" target="_blank"><strong class="strong-title">24小时限时达</strong>全国1288个县支持24小时内送货上门</a>
+        </li>
+        <li class="li-all-promise li-all-promise-2">
+        	<img class="img-promise" src="images/promise-2.png" width="82" height="76" alt="送装一体">
+            <a href="javascript:void(0);" class="a-title" target="_blank">
+            <strong class="strong-title">按约送达 超时免单</strong>约定时间内将货物送到收货地点</a>
+        </li>
+        <li class="li-all-promise li-all-promise-3">
+        	<img class="img-promise" src="images/promise-3.png" width="82" height="76" alt="送装一体">
+            <a href="javascript:void(0);" class="a-title" target="_blank" rel="nofolow">
+            <strong class="strong-title">7天包退换</strong>产品售出7日内可退换货</a>
+        </li>
+        <li class="li-all-promise li-all-promise-4">
+        	<img class="img-promise" src="images/promise-4.png" width="82" height="76" alt="货到付款">
+            <a href="javascript:void(0);" class="a-title" target="_blank" rel="nofolow">
+            	<strong class="strong-title">货到付款</strong>全国2082个区县支持货到付款</a>
+        </li>
+    </ul>
+</div>
+
+<div class="all-footer">
+	<div class="container clearfix">
+    	<p class="footer-links">
+        		<!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+            	<a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+                <!-- {if !$smarty.foreach.nav_bottom_list.last} -->|<!-- {/if} -->
+                <!-- {/foreach} -->
+        </p>
+        <p class="p-icp">{$lang.icp_number}：{$icp_number}</p>
+        <p class="p-copyright">{$copyright}</p>
+        <p>
+        <span>
+        <!-- {if $shop_address} --> 
+        {$shop_address}
+        <!-- {/if} --> 
+        <!-- {if $shop_postcode} --> 
+        {$shop_postcode}
+        <!-- {/if} --> 
+        <!-- Yahoo Messenger {foreach from=$ym item=im} --> 
+        <!-- {if $im} --> 
+        <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a> 
+        <!-- {/if} --> 
+        <!-- {/foreach} 结束Yahoo Messenger --> 
+        <!-- MSN Messenger {foreach from=$msn item=im} --> 
+        <!-- {if $im} --> 
+        <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a> 
+        <!-- {/if} --> 
+        <!-- {/foreach} 结束MSN Messenger --> 
+        <!-- Skype {foreach from=$skype item=im} --> 
+        <!-- {if $im} --> 
+        <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a> 
+        <!-- {/if} --> 
+        <!-- {/foreach} -->
+        </p>
+        <p class="p-all-honor"> 
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="108" height="40" alt="" src="images/50c6c153a103a74d19000040.png">
+            </a>
+                <img width="122" height="40" alt="" src="images/50c6c153a103a74d19000041.png"> 
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="112" height="40" alt="" src="images/50c6c153a103a74d19000042.png">
+            </a> 
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="141" height="40" alt="" src="images/50c6c153a103a74d19000044.png">
+            </a> 
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="124" height="40" alt="中国信用企业" src="images/50f7b61ce48435121700008e.jpg" style="*vertical-align:-7px;">
+            </a>
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="108" height="40" alt="可信网站身份验证" src="images/cnnic.png">
+            </a>
+            <a rel="nofollow" href="javascript:void(0);" target="_blank">
+                <img width="48" height="52" alt="备案图标" src="images/beian.gif" style="*vertical-align:-8px;">
+            </a>
+        </p>
+        <p style="text-align:center; padding-left:68px;"><a href=" http://www.ecmoban.com" target="_blank"><img src="images/ecmoban.gif" alt="ECShop模板" /></a></p>
+    </div>
+</div>
+
+
+<div class="all-tipbar J-tipbar">
+	<span class="s-wx2w" id="s-wx2w" title="微信关注，乐享服务！">
+        <img class="img-wx2w" src="images/ewm0917.png" width="150" height="150">
+    </span> 
+    <span class="a-tip-servicer J_openkf" title="在线客服"></span> 
+    <div class="kfbox">
+    	<div class="kf-title">在线客服</div><a class="close J_openkf" href="javascript:void(0);" title="关闭">X</a>
+        <div class="kf-qq">
+            <!-- QQ 号码 {foreach from=$qq item=im} --> 
+            <!-- {if $im} -->
+            <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
+            <!-- {/if} -->
+            <!-- {/foreach} 结束QQ号码 -->
+            <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
+            <!-- {if $im} -->
+            <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a>
+            <!-- {/if} --> 
+            <!--{/foreach} 结束淘宝旺旺 --> 
+            <!-- Yahoo Messenger {foreach from=$ym item=im} --> 
+            <!-- {if $im} --> 
+            <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a> 
+            <!-- {/if} --> 
+            <!-- {/foreach} 结束Yahoo Messenger --> 
+            <!-- MSN Messenger {foreach from=$msn item=im} --> 
+            <!-- {if $im} --> 
+            <a href="msnim:chat?contact={$im}"><img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" />{$im}</a> 
+            <!-- {/if} --> 
+            <!-- {/foreach} 结束MSN Messenger --> 
+            <!-- Skype {foreach from=$skype item=im} --> 
+            <!-- {if $im} --> 
+            <a href="skype:{$im|escape:url}?call"><img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" />{$im}</a> 
+            <!-- {/if} --> 
+            <!-- {/foreach} -->
+        </div>
+        <div class="kf-tel">
+            <!-- 客服电话{if $service_phone} --> 
+            客服电话 <br><b>{$service_phone}</b><br>
+            <!-- 结束客服电话{/if} --> 
+            <!-- 邮件{if $service_email} --> 
+            客服邮箱 <br><b>{$service_email}</b><br>
+            <!-- 结束邮件{/if} -->
+        </div>
+    </div>
+    <a rel="nofollow" href="javascript:void(0)" id="totop" class="a-backtop js-scorllTo" title="返回顶部"></a> 
+</div>
+<script>
+$(function(){
+	
+	//返回顶部按钮效果
+	var tipbar=$(".J-tipbar");
+	$(window).scroll(function(){
+		if($(window).scrollTop()>260){
+			tipbar.addClass("all-tipbar-show");
+		}else{
+			tipbar.removeClass("all-tipbar-show");
+		}
+	});
+	$("#totop").click(function(){$("html,body").animate({scrollTop:0});});
+	$("#s-wx2w").hover(function(){
+		$(this).find("img").show();	
+	},function(){
+		$(this).find("img").hide();
+	});
+	
+	//在线客服显示
+	$(".J_openkf").click(function(){
+		var kfbox=$(".kfbox");
+		var onclass="openkf";
+		if(kfbox.hasClass(onclass)){
+			kfbox.removeClass(onclass);	
+		}else{
+			kfbox.addClass(onclass);	
+		}
+	});
+})
+</script>
+
+

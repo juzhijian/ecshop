@@ -1,0 +1,7 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+<span  id="loginbar"><a href="user.php" title="进入个人中心">{$user_info.username}，{$lang.welcome}！</a><a href="user.php?act=logout" class="link-logout">退出</a></span>
+{else}
+ 嗨，欢迎来到本网站 请<a class="login"  href="user.php" >登录</a> &nbsp;|&nbsp; <a  href="user.php?act=register">免费注册</a>
+{/if}        
+            

@@ -1,0 +1,73 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="mini-cart<!--{if $cart_list}--> cart-have<!--{/if}-->">
+    <a href="flow.php" title="{$lang.view_cart}">
+        <span id="shopping-amount">{$number}</span>
+        购物车
+    </a>
+</div>
+<!--{if $cart_list eq 1}-->
+<div class="mini-cart cart-have">
+<dl>
+    <dt class="ld p-mini-cart"><span class="shopping"><span id="shopping-amount">{$number}</span></span><a href="./flow.php" id="settleup-url">购物车</a> </dt>
+    <dd>
+        <div id="settleup-content" class="mini-cart-list">
+            <ul id="mcart-mj" class="ul-mini-cart-list">
+                <!--{foreach from=$cart_list item=goods}-->
+                <li class="li-mini-cart">
+                    <a class="a-thumb" target="_blank"  href="{$goods.url}" title="{$goods.name}"><img width="60" height="60" src="{$goods.thumb}"></a>
+                    <a class="a-title" target="_blank"  href="{$goods.url}" title="{$goods.name}">{$goods.short_name}</a>
+                    <span class="s-price">
+                      ¥<em>{$goods.shop_price}</em> × {$goods.goods_number}
+                    </span>
+                    <a class="s-del" title="删除此商品" href="javascript:deleteCartGoods({$goods.rec_id});">删除</a>
+                </li>
+                <!--{/foreach}-->
+                <li class="li-mini-cart li-total">
+                	<p class="p-total">
+                    	<span class="s-total">共<em class="J_cart_checked_num em-all-num">{$number}</em>件</span>
+                        <span class="s-total">合计：<span class="J_cart_selected_money em-total-price" id="selectTotalPriceBottom"><em>¥</em>{$amount}</span></span>
+                    </p>
+                    <p class="p-total">
+                    	<a class="a-to-check" id="btn-payforgoods" href="./flow.php">去结算</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </dd>
+</dl>
+</div>
+<!--{elseif $cart_list eq 2}-->
+<div class="mini-cart cart-have">
+<dl class="">
+  <dt class="ld p-mini-cart">
+  	<span id="shopping-amount">0</span><a href="./flow.php" id="settleup-url">购物车</a>
+  </dt>
+  <dd>
+   <div class="mini-cart-list" id="snCartList"><p class="tc" style="padding:20px;">不要让您的购物车空着哦，快去逛逛吧</p></div>
+  </dd>
+</dl>
+</dd>
+</div>
+<!--{/if}-->
+<script type="text/javascript">
+function deleteCartGoods(rec_id)
+{
+	Ajax.call('delete_cart_goods.php', 'id='+rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function deleteCartGoodsResponse(res)
+{
+  if (res.error)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+	  $("#ECS_CARTINFO").html(res.content);
+	  $("#ECS_CARTINFO2").html(res.content);
+  }
+}
+</script> 
