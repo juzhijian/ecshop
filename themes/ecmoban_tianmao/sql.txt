@@ -1,0 +1,305 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2014 年 09 月 23 日 05:40
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.3.13
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `mbtianmao273`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ecs_template`
+--
+
+CREATE TABLE IF NOT EXISTS `ecs_template` (
+  `filename` varchar(30) NOT NULL DEFAULT '',
+  `region` varchar(40) NOT NULL DEFAULT '',
+  `library` varchar(40) NOT NULL DEFAULT '',
+  `sort_order` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `number` tinyint(1) unsigned NOT NULL DEFAULT '5',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `theme` varchar(60) NOT NULL DEFAULT '',
+  `remarks` varchar(30) NOT NULL DEFAULT '',
+  KEY `filename` (`filename`,`region`),
+  KEY `theme` (`theme`),
+  KEY `remarks` (`remarks`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `ecs_template`
+--
+
+INSERT INTO `ecs_template` (`filename`, `region`, `library`, `sort_order`, `id`, `number`, `type`, `theme`, `remarks`) VALUES
+('index', '左边区域', '/library/vote_list.lbi', 8, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/email_list.lbi', 9, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/order_query.lbi', 6, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/cart.lbi', 0, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/promotion_info.lbi', 3, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/auction.lbi', 4, 0, 3, 0, 'default', ''),
+('index', '左边区域', '/library/group_buy.lbi', 5, 0, 3, 0, 'default', ''),
+('index', '', '/library/recommend_promotion.lbi', 0, 0, 4, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_hot.lbi', 2, 0, 10, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_new.lbi', 1, 0, 10, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_best.lbi', 0, 0, 10, 0, 'default', ''),
+('index', '左边区域', '/library/invoice_query.lbi', 7, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/top10.lbi', 2, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/category_tree.lbi', 1, 0, 0, 0, 'default', ''),
+('index', '', '/library/brands.lbi', 0, 0, 11, 0, 'default', ''),
+('category', '左边区域', '/library/category_tree.lbi', 1, 0, 0, 0, 'default', ''),
+('category', '右边区域', '/library/recommend_best.lbi', 0, 0, 5, 0, 'default', ''),
+('category', '右边区域', '/library/goods_list.lbi', 1, 0, 0, 0, 'default', ''),
+('category', '右边区域', '/library/pages.lbi', 2, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/cart.lbi', 0, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/price_grade.lbi', 3, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/filter_attr.lbi', 2, 0, 0, 0, 'default', ''),
+('index', '底部文章广告', '/library/ad_position.lbi', 0, 17, 1, 4, 'jindong', ''),
+('index', '分类区域右侧广告五', '/library/ad_position.lbi', 0, 16, 1, 4, 'jindong', ''),
+('index', '分类区域右侧广告四', '/library/ad_position.lbi', 0, 15, 1, 4, 'jindong', ''),
+('index', '分类区域右侧广告三', '/library/ad_position.lbi', 0, 14, 1, 4, 'jindong', ''),
+('index', '分类区域右侧广告二', '/library/ad_position.lbi', 0, 13, 1, 4, 'jindong', ''),
+('index', '分类区域右侧广告一', '/library/ad_position.lbi', 0, 12, 1, 4, 'jindong', ''),
+('flow', '底部区域', '/library/cat_goods.lbi', 0, 21, 5, 1, 'jindong', ''),
+('index', '右侧广告一（窄）', '/library/ad_position.lbi', 0, 11, 0, 4, 'jindong', ''),
+('index', '右侧广告一（宽）', '/library/ad_position.lbi', 0, 10, 1, 4, 'jindong', ''),
+('index', '分类文章区域五', '/library/cat_articles.lbi', 0, 17, 5, 3, 'jindong', ''),
+('index', '分类文章区域四', '/library/cat_articles.lbi', 0, 16, 5, 3, 'jindong', ''),
+('index', '分类文章区域三', '/library/cat_articles.lbi', 0, 15, 5, 3, 'jindong', ''),
+('goods', '主区域左侧', '/library/goods_article.lbi', 2, 0, 0, 0, 'jindong', ''),
+('goods', '主区域左侧', '/library/goods_attrlinked.lbi', 0, 0, 0, 0, 'jindong', ''),
+('goods', '主区域左侧', '/library/goods_related.lbi', 1, 0, 0, 0, 'jindong', ''),
+('article', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', ''),
+('article', '', '/library/goods_related.lbi', 0, 0, 0, 0, 'jindong', ''),
+('article', '', '/library/recommend_hot.lbi', 0, 0, 3, 0, 'jindong', ''),
+('article', '', '/library/recommend_best.lbi', 0, 0, 3, 0, 'jindong', ''),
+('category', '', '/library/brands.lbi', 0, 0, 8, 0, 'jindong', ''),
+('category', '右边区域', '/library/goods_list.lbi', 0, 0, 0, 0, 'jindong', ''),
+('category', '右边区域', '/library/pages.lbi', 1, 0, 0, 0, 'jindong', ''),
+('category', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', ''),
+('goods', '主区域左侧', '/library/bought_goods.lbi', 1, 0, 0, 0, 'jindong', ''),
+('category', '', '/library/recommend_best.lbi', 0, 0, 4, 0, 'jindong', ''),
+('index', '分类区域一', '/library/cat_goods.lbi', 0, 21, 12, 1, 'jindong', '2010-07-12 23:41:09'),
+('index', '分类区域二', '/library/cat_goods.lbi', 0, 16, 12, 1, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域左侧', '/library/ad_position.lbi', 1, 4, 0, 4, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 1, 5, 1, 4, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/ad_position.lbi', 1, 1, 0, 4, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 0, 6, 1, 4, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/ad_position.lbi', 3, 4, 3, 4, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/ad_position.lbi', 4, 2, 3, 4, 'jindong', '2010-07-12 23:41:09'),
+('goods', '主区域左侧', '/library/goods_related.lbi', 1, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('goods', '主区域左侧', '/library/goods_attrlinked.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('goods', '右侧主区域', '/library/comments.lbi', 0, 0, 0, 0, 'jindong', ''),
+('category', '左边区域', '/library/history.lbi', 0, 0, 0, 0, 'jindong', ''),
+('index', '分类文章区域二', '/library/cat_articles.lbi', 0, 14, 5, 3, 'jindong', ''),
+('goods', '主区域左侧', '/library/goods_article.lbi', 2, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/new_articles.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('article', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '2010-07-12 23:41:09'),
+('article', '', '/library/goods_related.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('article', '', '/library/recommend_hot.lbi', 0, 0, 3, 0, 'jindong', '2010-07-12 23:41:09'),
+('article', '', '/library/recommend_best.lbi', 0, 0, 3, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '主区域左侧', '/library/history.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '主区域中侧', '/library/goods_list.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '', '/library/recommend_hot.lbi', 0, 0, 4, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '主区域左侧', '/library/brands.lbi', 1, 0, 3, 0, 'jindong', '2010-07-12 23:41:09'),
+('goods', '主区域左侧', '/library/bought_goods.lbi', 1, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('category', '', '/library/recommend_best.lbi', 0, 0, 4, 0, 'jindong', '2010-07-12 23:41:09'),
+('goods', '右侧主区域', '/library/comments.lbi', 0, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/top10.lbi', 6, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '', '/library/recommend_best.lbi', 0, 0, 6, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域中间', '/library/recommend_new.lbi', 1, 0, 6, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域中间', '/library/recommend_hot.lbi', 0, 0, 21, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '', '/library/recommend_promotion.lbi', 0, 0, 4, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/group_buy.lbi', 5, 0, 5, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域左侧', '/library/brands.lbi', 0, 0, 16, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域右侧', '/library/auction.lbi', 2, 0, 7, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '主区域左侧下', '/library/vote_list.lbi', 3, 0, 0, 0, 'jindong', '2010-07-12 23:41:09'),
+('index', '分类文章区域一', '/library/cat_articles.lbi', 0, 13, 5, 3, 'jindong', ''),
+('index', '底部文章', '/library/cat_articles.lbi', 0, 4, 4, 3, 'jindong', ''),
+('index', '商品区域六', '/library/cat_goods.lbi', 0, 459, 6, 1, 'jindong', ''),
+('index', '商品区域一', '/library/cat_goods.lbi', 0, 21, 8, 1, 'jindong', ''),
+('index', '右侧广告区', '/library/ad_position.lbi', 0, 8, 1, 4, 'jindong', '2010-07-12 23:41:09'),
+('goods', '主区域左侧', '/library/goods_attrlinked.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('goods', '主区域左侧', '/library/goods_related.lbi', 1, 0, 0, 0, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/ad_position.lbi', 4, 4, 3, 4, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/ad_position.lbi', 5, 2, 3, 4, 'jindong', '客户方案'),
+('index', '右侧广告区', '/library/ad_position.lbi', 0, 8, 1, 4, 'jindong', '客户方案'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 1, 5, 1, 4, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/ad_position.lbi', 1, 1, 0, 4, 'jindong', '客户方案'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 0, 6, 1, 4, 'jindong', '客户方案'),
+('index', '主区域左侧', '/library/ad_position.lbi', 1, 4, 0, 4, 'jindong', '客户方案'),
+('index', '分类区域二', '/library/cat_goods.lbi', 0, 16, 6, 1, 'jindong', '客户方案'),
+('index', '主区域左侧', '/library/brands.lbi', 0, 0, 16, 0, 'jindong', '客户方案'),
+('index', '主区域左侧下', '/library/vote_list.lbi', 2, 0, 0, 0, 'jindong', '客户方案'),
+('index', '分类区域一', '/library/cat_goods.lbi', 0, 21, 6, 1, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/auction.lbi', 3, 0, 7, 0, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/group_buy.lbi', 6, 0, 5, 0, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/recommend_promotion.lbi', 2, 0, 2, 0, 'jindong', '客户方案'),
+('index', '主区域中间', '/library/recommend_hot.lbi', 1, 0, 21, 0, 'jindong', '客户方案'),
+('index', '主区域中间', '/library/recommend_new.lbi', 2, 0, 6, 0, 'jindong', '客户方案'),
+('index', '主区域中间', '/library/recommend_best.lbi', 6, 0, 6, 0, 'jindong', '客户方案'),
+('goods', '右侧主区域', '/library/comments.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('category', '', '/library/recommend_best.lbi', 0, 0, 4, 0, 'jindong', '客户方案'),
+('goods', '主区域左侧', '/library/bought_goods.lbi', 1, 0, 0, 0, 'jindong', '客户方案'),
+('category', '主区域左侧', '/library/brands.lbi', 1, 0, 3, 0, 'jindong', '客户方案'),
+('category', '', '/library/recommend_hot.lbi', 0, 0, 4, 0, 'jindong', '客户方案'),
+('category', '主区域中侧', '/library/goods_list.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('category', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '客户方案'),
+('category', '主区域左侧', '/library/history.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('article', '', '/library/recommend_best.lbi', 0, 0, 3, 0, 'jindong', '客户方案'),
+('article', '', '/library/recommend_hot.lbi', 0, 0, 3, 0, 'jindong', '客户方案'),
+('article', '', '/library/goods_related.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('article', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/top10.lbi', 7, 0, 0, 0, 'jindong', '客户方案'),
+('goods', '主区域左侧', '/library/goods_article.lbi', 2, 0, 0, 0, 'jindong', '客户方案'),
+('index', '主区域右侧', '/library/new_articles.lbi', 0, 0, 0, 0, 'jindong', '客户方案'),
+('index', '商品区域四', '/library/cat_goods.lbi', 0, 216, 8, 1, 'jindong', ''),
+('index', '商品区域五', '/library/cat_goods.lbi', 0, 44, 8, 1, 'jindong', ''),
+('index', '商品区域三', '/library/cat_goods.lbi', 0, 223, 8, 1, 'jindong', ''),
+('index', '主区域中间', '/library/recommend_new.lbi', 1, 0, 6, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '右侧广告区', '/library/ad_position.lbi', 0, 8, 1, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/ad_position.lbi', 4, 2, 3, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/ad_position.lbi', 3, 4, 3, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/ad_position.lbi', 1, 1, 0, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 1, 5, 1, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域左侧下', '/library/ad_position.lbi', 0, 6, 1, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域左侧', '/library/ad_position.lbi', 1, 4, 0, 4, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/cat_articles.lbi', 0, 12, 5, 3, 'jindong', '2010-11-03 15:04:47'),
+('category', '主区域左侧', '/library/brands.lbi', 1, 0, 3, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '分类区域二', '/library/cat_goods.lbi', 0, 16, 12, 1, 'jindong', '2010-11-03 15:04:47'),
+('goods', '右侧主区域', '/library/comments.lbi', 0, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('category', '', '/library/recommend_best.lbi', 0, 0, 4, 0, 'jindong', '2010-11-03 15:04:47'),
+('goods', '主区域左侧', '/library/bought_goods.lbi', 1, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('category', '', '/library/recommend_hot.lbi', 0, 0, 4, 0, 'jindong', '2010-11-03 15:04:47'),
+('category', '主区域中侧', '/library/goods_list.lbi', 0, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('category', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '2010-11-03 15:04:47'),
+('category', '主区域左侧', '/library/history.lbi', 0, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('article', '', '/library/recommend_best.lbi', 0, 0, 3, 0, 'jindong', '2010-11-03 15:04:47'),
+('article', '', '/library/recommend_hot.lbi', 0, 0, 3, 0, 'jindong', '2010-11-03 15:04:47'),
+('article', '', '/library/goods_related.lbi', 0, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('article', '', '/library/recommend_promotion.lbi', 0, 0, 3, 0, 'jindong', '2010-11-03 15:04:47'),
+('goods', '主区域左侧', '/library/goods_related.lbi', 1, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('goods', '主区域左侧', '/library/goods_attrlinked.lbi', 0, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('goods', '主区域左侧', '/library/goods_article.lbi', 2, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '分类区域一', '/library/cat_goods.lbi', 0, 21, 12, 1, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域左侧下', '/library/vote_list.lbi', 2, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/auction.lbi', 2, 0, 7, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域左侧', '/library/brands.lbi', 0, 0, 16, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '', '/library/recommend_promotion.lbi', 0, 0, 4, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/group_buy.lbi', 5, 0, 5, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域中间', '/library/recommend_hot.lbi', 0, 0, 21, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '主区域右侧', '/library/top10.lbi', 6, 0, 0, 0, 'jindong', '2010-11-03 15:04:47'),
+('index', '', '/library/recommend_best.lbi', 0, 0, 6, 0, 'jindong', '2010-11-03 15:04:47'),
+('flow', '底部区域', '/library/cat_goods.lbi', 0, 21, 5, 1, 'jindong', '2010-11-03 15:04:47'),
+('index', '商品区域二', '/library/cat_goods.lbi', 0, 16, 8, 1, 'jindong', ''),
+('index', '在线调查', '/library/vote_list.lbi', 0, 0, 0, 0, 'jindong', ''),
+('index', '订单查询', '/library/order_query.lbi', 0, 0, 0, 0, 'jindong', ''),
+('index', '', '/library/brands.lbi', 0, 0, 16, 0, 'jindong', ''),
+('index', '', '/library/auction.lbi', 0, 0, 7, 0, 'jindong', ''),
+('index', '团购区域', '/library/group_buy.lbi', 0, 0, 1, 0, 'jindong', ''),
+('index', '滚动热卖区', '/library/recommend_hot.lbi', 0, 0, 5, 0, 'jindong', ''),
+('index', '滚动抢购区', '/library/recommend_promotion.lbi', 0, 0, 5, 0, 'jindong', ''),
+('index', '左侧区域', '/library/category_tree.lbi', 0, 0, 0, 0, 'jindong', ''),
+('index', '发货查询', '/library/invoice_query.lbi', 0, 0, 0, 0, 'jindong', ''),
+('index', '滚动推荐区', '/library/recommend_best.lbi', 0, 0, 5, 0, 'jindong', ''),
+('index', '滚动新品区', '/library/recommend_new.lbi', 0, 0, 5, 0, 'jindong', ''),
+('category', '', '/library/recommend_hot.lbi', 0, 0, 12, 0, 'jindong', '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `jindong_ad_position`
+--
+
+CREATE TABLE IF NOT EXISTS `jindong_ad_position` (
+  `position_id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `position_name` varchar(60) NOT NULL DEFAULT '',
+  `ad_width` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ad_height` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `position_desc` varchar(255) NOT NULL DEFAULT '',
+  `position_style` text NOT NULL,
+  PRIMARY KEY (`position_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=160 ;
+
+--
+-- 转存表中的数据 `jindong_ad_position`
+--
+
+INSERT INTO `jindong_ad_position` (`position_id`, `position_name`, `ad_width`, `ad_height`, `position_desc`, `position_style`) VALUES
+(159, '首页左侧广告', 216, 172, '', '<table cellpadding="0" cellspacing="0">\r\n{foreach from=$ads item=ad}\r\n<tr><td>{$ad}</td></tr>\r\n{/foreach}\r\n</table>');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `jindong_template`
+--
+
+CREATE TABLE IF NOT EXISTS `jindong_template` (
+  `filename` varchar(30) NOT NULL DEFAULT '',
+  `region` varchar(40) NOT NULL DEFAULT '',
+  `library` varchar(40) NOT NULL DEFAULT '',
+  `sort_order` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `number` tinyint(1) unsigned NOT NULL DEFAULT '5',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `theme` varchar(60) NOT NULL DEFAULT '',
+  `remarks` varchar(30) NOT NULL DEFAULT '',
+  KEY `filename` (`filename`,`region`),
+  KEY `theme` (`theme`),
+  KEY `remarks` (`remarks`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `jindong_template`
+--
+
+INSERT INTO `jindong_template` (`filename`, `region`, `library`, `sort_order`, `id`, `number`, `type`, `theme`, `remarks`) VALUES
+('index', '左边区域', '/library/vote_list.lbi', 8, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/email_list.lbi', 9, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/order_query.lbi', 6, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/cart.lbi', 0, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/promotion_info.lbi', 3, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/auction.lbi', 4, 0, 3, 0, 'default', ''),
+('index', '左边区域', '/library/group_buy.lbi', 5, 0, 3, 0, 'default', ''),
+('index', '', '/library/recommend_promotion.lbi', 0, 0, 4, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_hot.lbi', 2, 0, 10, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_new.lbi', 1, 0, 10, 0, 'default', ''),
+('index', '右边主区域', '/library/recommend_best.lbi', 0, 0, 10, 0, 'default', ''),
+('index', '左边区域', '/library/invoice_query.lbi', 7, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/top10.lbi', 2, 0, 0, 0, 'default', ''),
+('index', '左边区域', '/library/category_tree.lbi', 1, 0, 0, 0, 'default', ''),
+('index', '', '/library/brands.lbi', 0, 0, 11, 0, 'default', ''),
+('category', '左边区域', '/library/category_tree.lbi', 1, 0, 0, 0, 'default', ''),
+('category', '右边区域', '/library/recommend_best.lbi', 0, 0, 5, 0, 'default', ''),
+('category', '右边区域', '/library/goods_list.lbi', 1, 0, 0, 0, 'default', ''),
+('category', '右边区域', '/library/pages.lbi', 2, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/cart.lbi', 0, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/price_grade.lbi', 3, 0, 0, 0, 'default', ''),
+('category', '左边区域', '/library/filter_attr.lbi', 2, 0, 0, 0, 'default', ''),
+('index', '全宽行', '/library/cat_goods.lbi', 3, 21, 5, 1, 'ecmoban_tianmao', ''),
+('index', '', '/library/brands.lbi', 0, 0, 3, 0, 'ecmoban_tianmao', ''),
+('index', '', '/library/auction.lbi', 0, 0, 3, 0, 'ecmoban_tianmao', ''),
+('index', '', '/library/group_buy.lbi', 0, 0, 3, 0, 'ecmoban_tianmao', ''),
+('index', '', '/library/recommend_promotion.lbi', 0, 0, 4, 0, 'ecmoban_tianmao', ''),
+('index', '全宽行', '/library/recommend_hot.lbi', 1, 0, 5, 0, 'ecmoban_tianmao', ''),
+('index', '全宽行', '/library/recommend_new.lbi', 0, 0, 5, 0, 'ecmoban_tianmao', ''),
+('index', '全宽行', '/library/recommend_best.lbi', 2, 0, 5, 0, 'ecmoban_tianmao', '');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
