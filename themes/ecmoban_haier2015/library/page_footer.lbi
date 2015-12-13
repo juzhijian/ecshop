@@ -116,7 +116,7 @@
                 <img width="48" height="52" alt="备案图标" src="images/beian.gif" style="*vertical-align:-8px;">
             </a>
         </p>
-        <p style="text-align:center; padding-left:68px;"><a href=" http://www.ecmoban.com" target="_blank"><img src="images/ecmoban.gif" alt="ECShop模板" /></a></p>
+		<p style="margin:3px auto; height:20px; text-align:center">技术支持: <a href="http://www.jzhijian.com" style="margin:3px auto; height:20px; text-align:center">灵宝市聚指尖网络科技有限公司</a></p>
     </div>
 </div>
 
